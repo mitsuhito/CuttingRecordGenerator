@@ -23,7 +23,7 @@ Usage
   After drawing animation, sin_440hz_124sec_wav.svg will be created in data directory.  
 
   If you have some audio file, put it into data directory and change this line.  
-    *CuttingRecordGenerator.pde @27L  
+    * CuttingRecordGenerator.pde @27L  
      `String audioFilePath = "sin_440hz_124sec.wav";`  
 
 5. Cutting "Record" and play it!  
