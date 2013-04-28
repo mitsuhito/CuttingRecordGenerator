@@ -43,18 +43,59 @@ More detail is here.
 SVG Examples
 ------------
 It is possible take a look at some examples.  
-
+ 440Hz sine wave 30 seconds  
+  SVGs:  
+  * 33 RPM  
+    ** Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kdkYwcndVWlZNNmM/edit?usp=sharing  
+    ** Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32kRDd3SEo1Y1pSV0U/edit?usp=sharing  
+    ** Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kUk9JNGkzWE16OWc/edit?usp=sharing  
+  
+  * 45 RPM  
+    ** Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kSlU1WHZHSlFwUnM/edit?usp=sharing  
+    ** Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32keFQ5bUNyd1QxUkE/edit?usp=sharing  
+    ** Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kcFVsTEFFRmVwMnc/edit?usp=sharing  
+  
+  
  Drum n Bass Hit-Hat Conga Loop by RutgerMuller  
   Wav: http://www.freesound.org/people/RutgerMuller/sounds/51257/  
-  SVG: https://docs.google.com/file/d/0B2E9z6xmj32kZzI4Q2ZqSnhEV1k/edit?usp=sharing  
+  SVGs:  
+  * 33 RPM  
+    ** Sampling	Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kZzI4Q2ZqSnhEV1k/edit?usp=sharing  
+    ** Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32keEgtQ1IwdDBJNTA/edit?usp=sharing  
+    ** Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kMTlpTG4wZ1Nmd1k/edit?usp=sharing  
+  
+  * 45 RPM  
+    ** Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kaDdLVVRsUmdvdUU/edit?usp=sharing  
+    ** Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32kdjhfRUVlaGRTck0/edit?usp=sharing  
+    ** Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kZjVBaXptTGE3WWc/edit?usp=sharing  
+  
   
  8-bit ElectroHouse by RutgerMuller  
   Wav: http://www.freesound.org/people/RutgerMuller/sounds/51239/  
-  SVG: https://docs.google.com/file/d/0B2E9z6xmj32kLVBUZ1d0bS1yZjA/edit?usp=sharing  
+  SVGs:  
+  * 33 RPM  
+    ** Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kLVBUZ1d0bS1yZjA/edit?usp=sharing  
+    ** Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32kRFBLeEI4S29LVHc/edit?usp=sharing  
+    ** Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kV3haUmJTcjJBcDQ/edit?usp=sharing  
+  
+  * 45 RPM  
+    ** Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kUnN3djJvMUF3cjQ/edit?usp=sharing  
+    ** Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32kQ0Nad1E0OGMtbXc/edit?usp=sharing  
+    ** Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kZks3SmJ0cHcwZ0k/edit?usp=sharing  
+  
   
  Roadrunner loop by zagi2  
   Wav: http://www.freesound.org/people/zagi2/sounds/185558/  
-  SVG: https://docs.google.com/file/d/0B2E9z6xmj32kdkYwcndVWlZNNmM/edit?usp=sharing  
+  SVGs:  
+  * 33 RPM  
+    ** Sampling Rate: 44100Hz |	https://docs.google.com/file/d/0B2E9z6xmj32kc01rV29VMHN5N1k/edit?usp=sharing  
+    ** Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32kMVZPYVNFYXdYOXM/edit?usp=sharing  
+    ** Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kUGR1cHhqZ3ZreHc/edit?usp=sharing  
+  
+  * 45 RPM  
+    ** Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kX1pFY2gtUlQ2SWM/edit?usp=sharing  
+    ** Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32kUVhBak9yYXUwczQ/edit?usp=sharing  
+    ** Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kTmRWcDVLMWVkcXM/edit?usp=sharing  
   
   
   
