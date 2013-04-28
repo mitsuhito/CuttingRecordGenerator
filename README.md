@@ -45,15 +45,15 @@ SVG Examples
 It is possible take a look at some examples.  
   
 1. 440Hz sine wave 30 seconds  
-  SVGs:
-  * 33 RPM  
-    * Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kdkYwcndVWlZNNmM/edit?usp=sharing  
-    * Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32kRDd3SEo1Y1pSV0U/edit?usp=sharing  
-    * Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kUk9JNGkzWE16OWc/edit?usp=sharing  
-  * 45 RPM  
-    ** Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kSlU1WHZHSlFwUnM/edit?usp=sharing  
-    ** Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32keFQ5bUNyd1QxUkE/edit?usp=sharing  
-    ** Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kcFVsTEFFRmVwMnc/edit?usp=sharing  
+SVGs:
+* 33 RPM  
+  * Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kdkYwcndVWlZNNmM/edit?usp=sharing  
+  * Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32kRDd3SEo1Y1pSV0U/edit?usp=sharing  
+  * Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kUk9JNGkzWE16OWc/edit?usp=sharing  
+* 45 RPM  
+  * Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kSlU1WHZHSlFwUnM/edit?usp=sharing  
+  * Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32keFQ5bUNyd1QxUkE/edit?usp=sharing  
+  * Sampling Rate: 8000Hz  | https://docs.google.com/file/d/0B2E9z6xmj32kcFVsTEFFRmVwMnc/edit?usp=sharing  
   
   
 2. Drum n Bass Hit-Hat Conga Loop by RutgerMuller  
