@@ -46,15 +46,15 @@ It is possible take a look at some examples.
 
  Drum n Bass Hit-Hat Conga Loop by RutgerMuller  
   Wav: http://www.freesound.org/people/RutgerMuller/sounds/51257/  
-  SVG: https://github.com/mitsuhito/CuttingRecordGenerator/raw/master/examples/rutgermuller_drum_n_bass_hi_hat_conga_loop_44100hz.svg  
-
+  SVG: https://docs.google.com/file/d/0B2E9z6xmj32kZzI4Q2ZqSnhEV1k/edit?usp=sharing  
+  
  8-bit ElectroHouse by RutgerMuller  
   Wav: http://www.freesound.org/people/RutgerMuller/sounds/51239/  
-  SVG: https://github.com/mitsuhito/CuttingRecordGenerator/raw/master/examples/rutgermuller_8_bit_electrohouse_44100hz.svg  
-
+  SVG: https://docs.google.com/file/d/0B2E9z6xmj32kLVBUZ1d0bS1yZjA/edit?usp=sharing  
+  
  Roadrunner loop by zagi2  
   Wav: http://www.freesound.org/people/zagi2/sounds/185558/  
-  SVG: https://github.com/mitsuhito/CuttingRecordGenerator/raw/master/examples/zagi2_roadrunner_loop_44100hz.svg  
+  SVG: https://docs.google.com/file/d/0B2E9z6xmj32kdkYwcndVWlZNNmM/edit?usp=sharing  
   
   
   
