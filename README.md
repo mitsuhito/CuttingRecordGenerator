@@ -18,12 +18,12 @@ Usage
 3. Download CuttingRecordGenerator_src.zip and extract.  
   https://github.com/mitsuhito/CuttingRecordGenerator/blob/master/CuttingRecordGenerator_src.zip  
 
-4. Open CuttingRecordGenerator.pde and just press Run button.  
+4. Open *CuttingRecordGenerator.pde* and just press *Run* button.  
   Make sure there is no error or exception, then the Ess library is working.  
   After drawing animation, sin_440hz_124sec_wav.svg will be created in data directory.  
 
   If you have some audio file, put it into data directory and change this line.  
-    * CuttingRecordGenerator.pde @27L  
+    *CuttingRecordGenerator.pde @27L*  
      `String audioFilePath = "sin_440hz_124sec.wav";`  
 
 5. Cutting "Record" and play it!  
@@ -33,6 +33,7 @@ Usage
 
 What kind of sound made by laser cutter?
 ----------------------------------------
+Please watch this video.  
 <iframe src="http://player.vimeo.com/video/58682203" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/58682203">Laser Cut Record</a> from <a href="http://vimeo.com/user638795">jo kazuhiro</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
 
 More detail is here.  
