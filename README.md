@@ -1,9 +1,10 @@
 CuttingRecordGenerator
 ----------------------
 This program generates "Record" image from audio file. If you have laser cutter or paper cutting machine, you can  make your own "Record".  
-
-
-
+  
+This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.  
+  
+  
 Usage
 -----
 0. If you don't have Processing IDE, download from here.  
@@ -23,14 +24,13 @@ Usage
   After drawing animation, sin_440hz_124sec_wav.svg will be created in data directory.  
 
   If you have some audio file, put it into data directory and change this line.  
-    *CuttingRecordGenerator.pde @27L*  
-     `String audioFilePath = "sin_440hz_124sec.wav";`  
+    *CuttingRecordGenerator.pde @L31*  
+     `String audioFilePath = "sin_440hz_30sec.wav";`  
 
 5. Cutting "Record" and play it!  
-  If you have some digital fabrication tool such as laser cutter, paper cutting machine, you can try to make your own record. If you don't have it go to hacker space, fablab.  
-
-
-
+  If you have some digital fabrication tool such as laser cutter, paper cutting machine, you can try to make your own record. If you don't have it go to hacker space, fablab!  
+  
+  
 What kind of sound made by laser cutter?
 ----------------------------------------
 Please watch this video.  
@@ -38,9 +38,8 @@ Please watch this video.
 
 More detail is here.  
  http://www.instructables.com/id/How-to-make-a-record-without-prior-acoustic-inform/  
-
-
-
+  
+  
 SVG Examples
 ------------
 It is possible take a look at some examples.  
@@ -56,7 +55,7 @@ It is possible take a look at some examples.
  Roadrunner loop by zagi2  
   Wav: http://www.freesound.org/people/zagi2/sounds/185558/  
   SVG: https://github.com/mitsuhito/CuttingRecordGenerator/raw/master/examples/zagi2_roadrunner_loop_44100hz.svg  
-
-
-
+  
+  
+  
 mitsuhito.ando@gmail.com  

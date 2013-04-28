@@ -3,6 +3,10 @@
  * mitsuhito.ando@gmail.com
  *
  * Create "Record" as svg image from audio file.
+ *
+ * This work is licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License.
+ * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/3.0/.
+ *
  */
 
 import java.io.*;
@@ -12,10 +16,10 @@ import krister.Ess.*; // http://www.tree-axis.com/Ess
 // Parameters for svg output
 //
 float recordDiameterMillimeter = 170; // 170mm
-float outputSamplingRate = 44100; // 44.1kHz
+float outputSamplingRate = 44100;//44100; // 44.1kHz
 float rpm = 33; // 33rmp
 float amplitudeMax = 0.2; // 0.2pt
-float spaceOfEachLine = 1; // 1pt
+float spaceOfEachLine = 2; // 2pt
 float rInnerMarginMillimeter = 100; // 100mm
 float rOuterMarginMillimeter = 5; // 5mm
 float centerHoleDaiameterMillimeter = 7.24; // 7.24mm
@@ -24,10 +28,14 @@ float svgPathStrokeWidth = 0.01; // 0.01pt
 // 
 // Audio file path
 //
-String audioFilePath = "sin_440hz_124sec.wav";
+String audioFilePath = "sin_440hz_30sec.wav";
+//String audioFilePath = "rutgermuller_8_bit_electrohouse.wav";
+//String audioFilePath = "rutgermuller_drum_n_bass_hi_hat_conga_loop.wav";
+//String audioFilePath = "zagi2_roadrunner_loop.wav";
 
+
+// For drawing animation
 SpiralwaveformGeneratorThread generatorThread = new SpiralwaveformGeneratorThread();
-
 
 // Thread class for drawing animation
 class SpiralwaveformGeneratorThread extends Thread {
@@ -119,7 +127,7 @@ class SpiralwaveformGeneratorThread extends Thread {
 
     do
     {
-      strokeWeight(0.3);
+      strokeWeight(0.1);
       stroke(0, 0, 0);
       noFill();
 
@@ -139,9 +147,9 @@ class SpiralwaveformGeneratorThread extends Thread {
           svg.write(x + "," + y + " ");
 
           // Draw preview line
-          if (i%10 == 0) {
-            point(x, y); // Draw point on window
-            //line(previousX, previousY, x, y);
+          if (i%5 == 0) {
+            //point(x, y); // Draw point on window
+            line(previousX, previousY, x, y);
           }
 
           int currentPosMs = audioStream.ms(totalSamples)/1000;
