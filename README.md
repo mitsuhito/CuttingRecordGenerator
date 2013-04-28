@@ -21,7 +21,7 @@ Usage
 
 4. Open *CuttingRecordGenerator.pde* and just press *Run* button.  
   Make sure there is no error or exception, then the Ess library is working.  
-  After drawing animation, sin_440hz_124sec_wav.svg will be created in data directory.  
+  After drawing animation, sin_440hz_30sec_wav.svg will be created in data directory.  
 
   If you have some audio file, put it into data directory and change this line.  
     *CuttingRecordGenerator.pde @L31*  
