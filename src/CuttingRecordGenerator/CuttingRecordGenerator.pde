@@ -12,7 +12,7 @@ import krister.Ess.*; // http://www.tree-axis.com/Ess
 // Parameters for svg output
 //
 float recordDiameterMillimeter = 170; // 170mm
-float outputSamplingRate = 22000;//44100; // 44.1kHz
+float outputSamplingRate = 44100; // 44.1kHz
 float rpm = 33; // 33rmp
 float amplitudeMax = 0.2; // 0.2pt
 float spaceOfEachLine = 1; // 1pt
