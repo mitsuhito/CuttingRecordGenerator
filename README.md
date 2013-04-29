@@ -45,14 +45,15 @@ SVG Examples
 It is possible take a look at some examples.  
   
 1. 440Hz sine wave 30 seconds  
-  | RPM | Output Sampling Rate | SVG |
-  |-----|----------------------|-----|
-  |33|44100|https://docs.google.com/file/d/0B2E9z6xmj32kdkYwcndVWlZNNmM/edit?usp=sharing|
-  |33|16000|https://docs.google.com/file/d/0B2E9z6xmj32kRDd3SEo1Y1pSV0U/edit?usp=sharing|
-  |33|8000|https://docs.google.com/file/d/0B2E9z6xmj32kUk9JNGkzWE16OWc/edit?usp=sharing|
-  |45|44100|https://docs.google.com/file/d/0B2E9z6xmj32kSlU1WHZHSlFwUnM/edit?usp=sharing|
-  |45|16000|https://docs.google.com/file/d/0B2E9z6xmj32keFQ5bUNyd1QxUkE/edit?usp=sharing|
-  |45|8000|https://docs.google.com/file/d/0B2E9z6xmj32kcFVsTEFFRmVwMnc/edit?usp=sharing|
+
+  | RPM | Output Sampling Rate | SVG |  
+  |-----|----------------------|-----|  
+  |33|44100|https://docs.google.com/file/d/0B2E9z6xmj32kdkYwcndVWlZNNmM/edit?usp=sharing|  
+  |33|16000|https://docs.google.com/file/d/0B2E9z6xmj32kRDd3SEo1Y1pSV0U/edit?usp=sharing|  
+  |33|8000|https://docs.google.com/file/d/0B2E9z6xmj32kUk9JNGkzWE16OWc/edit?usp=sharing|  
+  |45|44100|https://docs.google.com/file/d/0B2E9z6xmj32kSlU1WHZHSlFwUnM/edit?usp=sharing|  
+  |45|16000|https://docs.google.com/file/d/0B2E9z6xmj32keFQ5bUNyd1QxUkE/edit?usp=sharing|  
+  |45|8000|https://docs.google.com/file/d/0B2E9z6xmj32kcFVsTEFFRmVwMnc/edit?usp=sharing|  
   
 2. Drum n Bass Hit-Hat Conga Loop by RutgerMuller  
   Wav: http://www.freesound.org/people/RutgerMuller/sounds/51257/  
