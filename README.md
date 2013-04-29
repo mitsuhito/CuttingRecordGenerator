@@ -17,7 +17,7 @@ Usage
   Usually, ~/Documents/Processing/libraries/  
 
 3. Download CuttingRecordGenerator_src.zip and extract.  
-  https://github.com/mitsuhito/CuttingRecordGenerator/blob/master/CuttingRecordGenerator_src.zip  
+  https://github.com/mitsuhito/CuttingRecordGenerator/blob/master/CuttingRecordGenerator_src.zip?raw=true  
 
 4. Open *CuttingRecordGenerator.pde* and just press *Run* button.  
   Make sure there is no error or exception, then the Ess library is working.  
