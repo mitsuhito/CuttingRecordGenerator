@@ -46,6 +46,11 @@ It is possible take a look at some examples.
   
 1. 440Hz sine wave 30 seconds  
   SVGs:
+
+  | Name | RPM | Output Sampling Rate | Wav | SVG |
+  |------|-----|----------------------|-----|-----|
+  |440Hz|33|44100| - |https://docs.google.com/file/d/0B2E9z6xmj32kdkYwcndVWlZNNmM/edit?usp=sharing|
+
   * 33 RPM  
   *  * Sampling Rate: 44100Hz | https://docs.google.com/file/d/0B2E9z6xmj32kdkYwcndVWlZNNmM/edit?usp=sharing  
   *  * Sampling Rate: 16000Hz | https://docs.google.com/file/d/0B2E9z6xmj32kRDd3SEo1Y1pSV0U/edit?usp=sharing  
