@@ -10,7 +10,7 @@ Usage
 0. If you don't have Processing IDE, download from here.  
   http://www.processing.org/  
 
-1. Download Ess library.  
+1. Download Ess library.We need this to handle audio file(wav, aif, mp3).  
   http://www.tree-axis.com/Ess/download.html  
 
 2. Extruct Ess_r2.zip and put it into Processing library directory.  
@@ -39,7 +39,7 @@ float spaceOfEachLine = 2; // 2pt
 float rInnerMarginMillimeter = 100; // 100mm
 float rOuterMarginMillimeter = 5; // 5mm
 float centerHoleDaiameterMillimeter = 7.24; // 7.24mm
-float svgPathStrokeWidth = 0.01; // 0.01pt`
+float svgPathStrokeWidth = 0.01; // 0.01pt
   ```
 
   ![param_diagram1](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram1.png)
