@@ -27,8 +27,18 @@ Usage
     *CuttingRecordGenerator.pde @L31*  
      `String audioFilePath = "sin_440hz_30sec.wav";`  
 
-5. Adjust parameters.
+5. Adjust parameters.  
   There are some output parameters.According to the need, change these values.
+  `float recordDiameterMillimeter = 170; // 170mm
+  float outputSamplingRate = 44100; // 44.1khz
+  float rpm = 33; // 33rmp
+  float amplitudeMax = 0.2; // 0.2pt
+  float spaceOfEachLine = 2; // 2pt
+  float rInnerMarginMillimeter = 100; // 100mm
+  float rOuterMarginMillimeter = 5; // 5mm
+  float centerHoleDaiameterMillimeter = 7.24; // 7.24mm
+  float svgPathStrokeWidth = 0.01; // 0.01pt`
+  
   ![param_diagram1](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram1.png)
   ![param_diagram2](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram2.png)
 
