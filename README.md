@@ -30,7 +30,7 @@ Usage
 5. Adjust parameters.  
   There are some output parameters.According to the need, change these values.
 
-```
+  ```
 float recordDiameterMillimeter = 170; // 170mm
 float outputSamplingRate = 44100; // 44.1khz
 float rpm = 33; // 33rmp
@@ -40,12 +40,11 @@ float rInnerMarginMillimeter = 100; // 100mm
 float rOuterMarginMillimeter = 5; // 5mm
 float centerHoleDaiameterMillimeter = 7.24; // 7.24mm
 float svgPathStrokeWidth = 0.01; // 0.01pt`
-```
+  ```
 
   ![param_diagram1](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram1.png)
   ![param_diagram2](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram2.png)
-
-
+  
 6. Cutting "Record" and play it!  
   If you have some digital fabrication tool such as laser cutter, paper cutting machine, you can try to make your own record. If you don't have it go to hacker space, fablab!  
   
