@@ -27,7 +27,14 @@ Usage
     *CuttingRecordGenerator.pde @L31*  
      `String audioFilePath = "sin_440hz_30sec.wav";`  
 
-5. Cutting "Record" and play it!  
+5. Adjust parameters.
+  There are some output parameters.According to the need, change these values.
+[!param_diagram1](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram1.png)
+  
+[!param_diagram2](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram2.png)
+
+
+6. Cutting "Record" and play it!  
   If you have some digital fabrication tool such as laser cutter, paper cutting machine, you can try to make your own record. If you don't have it go to hacker space, fablab!  
   
   
