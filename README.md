@@ -29,9 +29,8 @@ Usage
 
 5. Adjust parameters.
   There are some output parameters.According to the need, change these values.
-[!param_diagram1](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram1.png)
-  
-[!param_diagram2](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram2.png)
+  ![param_diagram1](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram1.png)
+  ![param_diagram2](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram2.png)
 
 
 6. Cutting "Record" and play it!  
