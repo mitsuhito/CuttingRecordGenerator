@@ -97,7 +97,7 @@ class SpiralwaveformGeneratorThread extends Thread {
     String svgOutputPath = f.getParent()+"/"+(f.getName().replace(".", "_"));
     // Create SVG file with canvas size
     svg = new SVG((int)(recordDiameterMillimeter/MM_PER_PT), (int)(recordDiameterMillimeter/MM_PER_PT));
-    svg.open(svgOutputPath+"_"+dpi+"dpi.svg");
+    svg.open(svgOutputPath+"_"+(int)rpm+"rpm_"+dpi+"dpi.svg");
   
     // Convert from millimeter to point 
     r = (recordDiameterMillimeter/2) / MM_PER_PT;
