@@ -31,15 +31,21 @@ Usage
   There are some output parameters.According to the need, change these values.
 
   ```
-float recordDiameterMillimeter = 170; // 170mm
-float outputSamplingRate = 44100; // 44.1khz
-float rpm = 33; // 33rmp
-float amplitudeMax = 0.2; // 0.2pt
-float spaceOfEachLine = 2; // 2pt
-float rInnerMarginMillimeter = 100; // 100mm
-float rOuterMarginMillimeter = 5; // 5mm
-float centerHoleDaiameterMillimeter = 7.24; // 7.24mm
-float svgPathStrokeWidth = 0.01; // 0.01pt
+//
+// Parameters for svg output
+//
+double recordDiameterMillimeter = 300;//170; // 170mm
+double outputSamplingRate = 44100;//44100; // 44.1kHz
+double rpm = 33; // 33rmp
+double amplitudeMax = 0.2; // 0.2pt
+double spaceOfEachLine = 2; // 2pt
+double rInnerMarginMillimeter = 100; // 100mm
+double rOuterMarginMillimeter = 5; // 5mm
+double centerHoleDaiameterMillimeter = 7.24; // 7.24mm
+double svgPathStrokeWidth = 0.001; // 0.001pt
+// fabrication machine's dpi 
+// i.e. Universal VLS 2.30 with HPDFO lends is 1000dpi
+int dpi = 200; 
   ```
 
   ![param_diagram1](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram1.png)
