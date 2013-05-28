@@ -23,7 +23,7 @@ double spaceOfEachLine = 0.5;//1.25;//2; // 2pt
 double rInnerMarginMillimeter = 100; // 100mm
 double rOuterMarginMillimeter = 5; // 5mm
 double centerHoleDaiameterMillimeter = 7.24; // 7.24mm
-double svgPathStrokeWidth = 0.1;//0.001; // 0.001pt
+double svgPathStrokeWidth = 0.001; // 0.001pt
 // fabrication machine's dpi 
 // i.e. Universal VLS 2.30 with HPDFO lends is 1000dpi
 int dpi = 600; 
@@ -31,11 +31,10 @@ int dpi = 600;
 // 
 // Audio file path
 //
-//String audioFilePath = "sin_440hz_30sec.wav";
+String audioFilePath = "sin_440hz_30sec.wav";
 //String audioFilePath = "rutgermuller_8_bit_electrohouse.wav";
 //String audioFilePath = "rutgermuller_drum_n_bass_hi_hat_conga_loop.wav";
 //String audioFilePath = "zagi2_roadrunner_loop.wav";
-String audioFilePath = "test.wav";
 
 // For drawing animation
 SpiralwaveformGeneratorThread generatorThread = new SpiralwaveformGeneratorThread();
@@ -139,7 +138,7 @@ class SpiralwaveformGeneratorThread extends Thread {
 
     //line(0,0, width, height);
     //line(map(0, 0, svg.getWidth(), 0, width), map(0, 0, svg.getHeight(), 0, height), map(svg.getWidth(), 0, svg.getWidth(), 0, width), map(svg.getHeight(), 0, svg.getHeight(), 0, height));
-    line(map(0, 0, svg.getWidth(), 0, width), map(0, 0, svg.getHeight(), 0, height), map(width/2, 0, svg.getWidth(), 0, width), map(height/2, 0, svg.getHeight(), 0, height));
+    //line(map(0, 0, svg.getWidth(), 0, width), map(0, 0, svg.getHeight(), 0, height), map(width/2, 0, svg.getWidth(), 0, width), map(height/2, 0, svg.getHeight(), 0, height));
 
     // Keep drawing
     do
@@ -171,8 +170,8 @@ class SpiralwaveformGeneratorThread extends Thread {
           // Fast draw preview line
           if (i%5 == 0) {
             //point(x, y); // Draw point on window
-            point(map((float)x, 0, svg.getWidth(), 0, width), map((float)y, 0, svg.getHeight(), 0, height));
-            //line(previousX, previousY, x, y);
+            //point(map((float)x, 0, svg.getWidth(), 0, width), map((float)y, 0, svg.getHeight(), 0, height));
+            line((float)previousX, (float)previousY, (float)x, (float)y);
           }
 
           int currentPosMs = audioStream.ms(totalSamples)/1000;
