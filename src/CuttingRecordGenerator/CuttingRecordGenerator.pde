@@ -15,18 +15,18 @@ import krister.Ess.*; // http://www.tree-axis.com/Ess
 //
 // Parameters for svg output
 //
-double recordDiameterMillimeter = 170; // 170mm
+double recordDiameterMillimeter = 300;//170; // 170mm
 double outputSamplingRate = 44100;//44100; // 44.1kHz
 double rpm = 33; // 33rmp
-double amplitudeMax = 1;//0.2; // 0.2pt
-double spaceOfEachLine = 0.5;//1.25;//2; // 2pt
+double amplitudeMax = 0.2; // 0.2pt
+double spaceOfEachLine = 2; // 2pt
 double rInnerMarginMillimeter = 100; // 100mm
 double rOuterMarginMillimeter = 5; // 5mm
 double centerHoleDaiameterMillimeter = 7.24; // 7.24mm
 double svgPathStrokeWidth = 0.001; // 0.001pt
 // fabrication machine's dpi 
 // i.e. Universal VLS 2.30 with HPDFO lends is 1000dpi
-int dpi = 600; 
+int dpi = 200; 
 
 // 
 // Audio file path
@@ -105,15 +105,15 @@ class SpiralwaveformGeneratorThread extends Thread {
     r = r - (rOuterMarginMillimeter / MM_PER_PT);
 
     // Calculate starting point
-    x = r*cos((float)theta) + width/2;
-    y = r*sin((float)theta) + height/2;
+    x = r*cos((float)theta) + svg.getWidth()/2;
+    y = r*sin((float)theta) + svg.getHeight()/2;
     previousX = x;
     previousY = y;
     
     // Draw outer circle
-    svg.write("<circle fill='none' stroke='#ff0000' stroke-width='"+svgPathStrokeWidth+"pt' cx='"+width/2+"' cy='"+height/2+"' r='"+recordDiameterMillimeter/2+"mm'/>\n");
+    svg.write("<circle fill='none' stroke='#ff0000' stroke-width='"+svgPathStrokeWidth+"pt' cx='"+svg.getWidth()/2+"' cy='"+svg.getHeight()/2+"' r='"+recordDiameterMillimeter/2+"mm'/>\n");
     // Draw center hole 
-    svg.write("<circle fill='none' stroke='#ff0000' stroke-width='"+svgPathStrokeWidth+"pt' cx='"+width/2+"' cy='"+height/2+"' r='"+centerHoleDaiameterMillimeter/2+"mm'/>\n");  
+    svg.write("<circle fill='none' stroke='#ff0000' stroke-width='"+svgPathStrokeWidth+"pt' cx='"+svg.getWidth()/2+"' cy='"+svg.getHeight()/2+"' r='"+centerHoleDaiameterMillimeter/2+"mm'/>\n");  
     
     // Starting draw groove
     svg.write("<g>\n");
@@ -155,8 +155,8 @@ class SpiralwaveformGeneratorThread extends Thread {
       {
         if (r > centerHoleDaiameterMillimeter + rInnerMarginMillimeter) {
           amp = map(audioStream.buffer[s], -1, 1, (float)amplitudeMax*-1, (float)amplitudeMax);
-          x = (r + amp)*cos((float)theta) + width/2;
-          y = (r + amp)*sin((float)theta) + height/2;
+          x = (r + amp)*cos((float)theta) + svg.getWidth()/2;
+          y = (r + amp)*sin((float)theta) + svg.getHeight()/2;
 
           // Check the distance between last point and new point for limitation of output dpi          
           double dist = sqrt(abs((float)previousX - (float)x)*abs((float)previousX - (float)x) + abs((float)previousY - (float)y)*abs((float)previousY - (float)y)); // pt
@@ -169,20 +169,28 @@ class SpiralwaveformGeneratorThread extends Thread {
           
           // Fast draw preview line
           if (i%5 == 0) {
-            //point(x, y); // Draw point on window
+            // Draw point on window
             //point(map((float)x, 0, svg.getWidth(), 0, width), map((float)y, 0, svg.getHeight(), 0, height));
-            line((float)previousX, (float)previousY, (float)x, (float)y);
+            
+            // Draw line on window
+            line(
+              map((float)previousX, 0, svg.getWidth(), 0, width),
+              map((float)previousY, 0, svg.getHeight(), 0, height),
+              map((float)x, 0, svg.getWidth(), 0, width),
+              map((float)y, 0, svg.getHeight(), 0, height)
+            );
           }
-
+          
+          // Draw current audio head position 
           int currentPosMs = audioStream.ms(totalSamples)/1000;
           if (currentPosMs != lastPosMs) {
             fill(255);
             noStroke();
-            double _r = centerHoleDaiameterMillimeter + rInnerMarginMillimeter;
-            rect(width/2 - sqrt((float)(_r*_r + _r*_r))/2, height/2 - sqrt((float)(_r*_r + _r*_r))/2, sqrt((float)(_r*_r + _r*_r)), sqrt((float)(_r*_r + _r*_r)));
+            float _r = map((float)(centerHoleDaiameterMillimeter/2 + rInnerMarginMillimeter), 0, svg.getWidth(), 0, width);
+            ellipse(width/2, height/2, _r*2, _r*2); 
             fill(0);
-            textAlign(CENTER);
-            text(currentPosMs +"sec", width/2  - sqrt((float)(_r*_r + _r*_r))/2, height/2, sqrt((float)(_r*_r + _r*_r)), sqrt((float)(_r*_r + _r*_r)));
+            textAlign(CENTER, CENTER);
+            text(currentPosMs +"sec", width/2, height/2);
             lastPosMs = currentPosMs;
           }
         }
@@ -196,7 +204,7 @@ class SpiralwaveformGeneratorThread extends Thread {
           svg.write("'/>\n"); 
           svg.write("<path fill='none' ");
           svg.write("stroke='#0000ff' stroke-width='"+svgPathStrokeWidth+"pt' ");
-          svg.write("d='M"+x+","+y+" L"+x+","+y + " ");
+          svg.write("d='M"+previousX+","+previousY+" L"+x+","+y + " ");
         }
 
         i++;
@@ -206,9 +214,31 @@ class SpiralwaveformGeneratorThread extends Thread {
     }
     while (samplesRead != 0);
   
-    // Close svg tag
+    // Close groove path
     svg.write("'/>\n");
     svg.write("</g>\n");
+
+    // Draw run-out groove
+    svg.write("<path fill='none' ");
+    svg.write("stroke='#0000ff' stroke-width='"+svgPathStrokeWidth+"pt' ");
+    svg.write("d='M"+ x +","+ y +" L"+x+","+y +" ");
+    for(double d = 0; d<TWO_PI*2; d+=TWO_PI/dpi) {
+      x = (r)*cos((float)theta) + svg.getWidth()/2;
+      y = (r)*sin((float)theta) + svg.getHeight()/2;
+      svg.write(x + "," + y + " ");
+      theta -= TWO_PI/dpi;
+      r -= 1.0/dpi; // Descrease 1pt while this loop
+    }
+    for(double d = 0; d<TWO_PI; d+=TWO_PI/dpi) {
+      x = (r)*cos((float)theta) + svg.getWidth()/2;
+      y = (r)*sin((float)theta) + svg.getHeight()/2;
+      svg.write(x + "," + y + " "); // Draw closed circle
+      theta -= TWO_PI/dpi;
+    }
+    // Close run-out groove path
+    svg.write("'/>\n");
+    
+    // Close svg tags
     svg.close();
     
     if(svgCompression)
