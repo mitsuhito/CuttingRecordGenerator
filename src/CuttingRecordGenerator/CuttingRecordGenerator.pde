@@ -15,24 +15,27 @@ import krister.Ess.*; // http://www.tree-axis.com/Ess
 //
 // Parameters for svg output
 //
-float recordDiameterMillimeter = 170; // 170mm
-float outputSamplingRate = 44100; // 44.1kHz
-float rpm = 33; // 33rmp
-float amplitudeMax = 0.2; // 0.2pt
-float spaceOfEachLine = 2; // 2pt
-float rInnerMarginMillimeter = 100; // 100mm
-float rOuterMarginMillimeter = 5; // 5mm
-float centerHoleDaiameterMillimeter = 7.24; // 7.24mm
-float svgPathStrokeWidth = 0.01; // 0.01pt
+double recordDiameterMillimeter = 170; // 170mm
+double outputSamplingRate = 44100;//44100; // 44.1kHz
+double rpm = 33; // 33rmp
+double amplitudeMax = 1;//0.2; // 0.2pt
+double spaceOfEachLine = 0.5;//1.25;//2; // 2pt
+double rInnerMarginMillimeter = 100; // 100mm
+double rOuterMarginMillimeter = 5; // 5mm
+double centerHoleDaiameterMillimeter = 7.24; // 7.24mm
+double svgPathStrokeWidth = 0.1;//0.001; // 0.001pt
+// fabrication machine's dpi 
+// i.e. Universal VLS 2.30 with HPDFO lends is 1000dpi
+int dpi = 600; 
 
 // 
 // Audio file path
 //
-String audioFilePath = "sin_440hz_30sec.wav";
+//String audioFilePath = "sin_440hz_30sec.wav";
 //String audioFilePath = "rutgermuller_8_bit_electrohouse.wav";
 //String audioFilePath = "rutgermuller_drum_n_bass_hi_hat_conga_loop.wav";
 //String audioFilePath = "zagi2_roadrunner_loop.wav";
-
+String audioFilePath = "test.wav";
 
 // For drawing animation
 SpiralwaveformGeneratorThread generatorThread = new SpiralwaveformGeneratorThread();
@@ -40,15 +43,16 @@ SpiralwaveformGeneratorThread generatorThread = new SpiralwaveformGeneratorThrea
 // Thread class for drawing animation
 class SpiralwaveformGeneratorThread extends Thread {
   boolean running;
-  int wait;
   File file;
   SVG svg;
   boolean svgCompression = false;
-  float x = 0;
-  float y = 0;
-  float previousX = 0;
-  float previousY = 0;
-
+  double x = 0;
+  double y = 0;
+  double previousX = 0;
+  double previousY = 0;
+  static final double MM_PER_PT = 0.3527777; // 0.3527777mm per 1pt
+  static final double MM_PER_INCH = 25.4; // 25.4mm per 1inch
+  
   SpiralwaveformGeneratorThread() {
     System.out.println("SpiralwaveformGeneratorThread is created.");
   }
@@ -79,36 +83,44 @@ class SpiralwaveformGeneratorThread extends Thread {
   // Generate spiral waveform from audio file (wav,aif,mp3) @16bit.
   // TODO: Support multi channel.
   void generate(File f) {
-    float a = 360 / (outputSamplingRate * (60/rpm));
+    double a = 360 / (outputSamplingRate * (60/rpm));
     println("generate():: a:" + a);
-    float aRad = a*((float)Math.PI/180);
-    float r = 0;
-    float theta = 0;
+    //println(spaceOfEachLine/(outputSamplingRate * (60/rpm)));
+    double aRad = a*((double)Math.PI/180);
+    double r = 0;
+    double theta = 0;
   
-    float x = 0;
-    float y = 0;
+    double x = 0;
+    double y = 0;
   
     long i = 0;
-  
+
     String svgOutputPath = f.getParent()+"/"+(f.getName().replace(".", "_"));
-    svg = new SVG(600, 600);
-    svg.open(svgOutputPath+".svg");
+    // Create SVG file with canvas size
+    svg = new SVG((int)(recordDiameterMillimeter/MM_PER_PT), (int)(recordDiameterMillimeter/MM_PER_PT));
+    svg.open(svgOutputPath+"_"+dpi+"dpi.svg");
   
     // Convert from millimeter to point 
-    r = (recordDiameterMillimeter/2) / 0.3527777;
-  
-    r = r - (rOuterMarginMillimeter / 0.3527777);
-  
-    x = r*cos(theta) + width/2;
-    y = r*sin(theta) + height/2;
-  
+    r = (recordDiameterMillimeter/2) / MM_PER_PT;
+    
+    r = r - (rOuterMarginMillimeter / MM_PER_PT);
+
+    // Calculate starting point
+    x = r*cos((float)theta) + width/2;
+    y = r*sin((float)theta) + height/2;
+    previousX = x;
+    previousY = y;
+    
+    // Draw outer circle
     svg.write("<circle fill='none' stroke='#ff0000' stroke-width='"+svgPathStrokeWidth+"pt' cx='"+width/2+"' cy='"+height/2+"' r='"+recordDiameterMillimeter/2+"mm'/>\n");
+    // Draw center hole 
     svg.write("<circle fill='none' stroke='#ff0000' stroke-width='"+svgPathStrokeWidth+"pt' cx='"+width/2+"' cy='"+height/2+"' r='"+centerHoleDaiameterMillimeter/2+"mm'/>\n");  
+    
+    // Starting draw groove
     svg.write("<g>\n");
     svg.write("<path fill='none' ");
     svg.write("stroke='#0000ff' stroke-width='"+svgPathStrokeWidth+"pt' ");
     svg.write("d='M"+ x +","+ y +" L"+x+","+y +" ");
-  
   
     AudioStream audioStream;
     AudioFile audioFile;
@@ -118,13 +130,18 @@ class SpiralwaveformGeneratorThread extends Thread {
     println("Output Sampling Rate: " + outputSamplingRate);
     
     audioStream = new AudioStream(20);
-    audioStream.sampleRate(outputSamplingRate);
+    audioStream.sampleRate((float)outputSamplingRate);
 
-    float amp = 0.0;
+    double amp = 0.0;
     int samplesRead;
     int totalSamples = 0;
     int lastPosMs = 0;
 
+    //line(0,0, width, height);
+    //line(map(0, 0, svg.getWidth(), 0, width), map(0, 0, svg.getHeight(), 0, height), map(svg.getWidth(), 0, svg.getWidth(), 0, width), map(svg.getHeight(), 0, svg.getHeight(), 0, height));
+    line(map(0, 0, svg.getWidth(), 0, width), map(0, 0, svg.getHeight(), 0, height), map(width/2, 0, svg.getWidth(), 0, width), map(height/2, 0, svg.getHeight(), 0, height));
+
+    // Keep drawing
     do
     {
       strokeWeight(0.1);
@@ -138,29 +155,35 @@ class SpiralwaveformGeneratorThread extends Thread {
       for (int s=0; s<audioStream.size; s++)
       {
         if (r > centerHoleDaiameterMillimeter + rInnerMarginMillimeter) {
-          previousX = x;
-          previousY = y;
-          amp = map(audioStream.buffer[s], -1, 1, amplitudeMax*-1, amplitudeMax);
-          x = (r + amp)*cos(theta) + width/2;
-          y = (r + amp)*sin(theta) + height/2;          
-          // Write out a point
-          svg.write(x + "," + y + " ");
+          amp = map(audioStream.buffer[s], -1, 1, (float)amplitudeMax*-1, (float)amplitudeMax);
+          x = (r + amp)*cos((float)theta) + width/2;
+          y = (r + amp)*sin((float)theta) + height/2;
 
-          // Draw preview line
+          // Check the distance between last point and new point for limitation of output dpi          
+          double dist = sqrt(abs((float)previousX - (float)x)*abs((float)previousX - (float)x) + abs((float)previousY - (float)y)*abs((float)previousY - (float)y)); // pt
+          if(dist >= ((MM_PER_INCH / dpi) / MM_PER_PT)) {          
+            // Write out a point
+            svg.write(x + "," + y + " ");
+            previousX = x;
+            previousY = y;
+          }
+          
+          // Fast draw preview line
           if (i%5 == 0) {
             //point(x, y); // Draw point on window
-            line(previousX, previousY, x, y);
+            point(map((float)x, 0, svg.getWidth(), 0, width), map((float)y, 0, svg.getHeight(), 0, height));
+            //line(previousX, previousY, x, y);
           }
 
           int currentPosMs = audioStream.ms(totalSamples)/1000;
           if (currentPosMs != lastPosMs) {
             fill(255);
             noStroke();
-            float _r = centerHoleDaiameterMillimeter + rInnerMarginMillimeter;
-            rect(width/2 - sqrt(_r*_r + _r*_r)/2, height/2 - sqrt(_r*_r + _r*_r)/2, sqrt(_r*_r + _r*_r), sqrt(_r*_r + _r*_r));
+            double _r = centerHoleDaiameterMillimeter + rInnerMarginMillimeter;
+            rect(width/2 - sqrt((float)(_r*_r + _r*_r))/2, height/2 - sqrt((float)(_r*_r + _r*_r))/2, sqrt((float)(_r*_r + _r*_r)), sqrt((float)(_r*_r + _r*_r)));
             fill(0);
             textAlign(CENTER);
-            text(currentPosMs +"sec", width/2  - sqrt(_r*_r + _r*_r)/2, height/2, sqrt(_r*_r + _r*_r), sqrt(_r*_r + _r*_r));
+            text(currentPosMs +"sec", width/2  - sqrt((float)(_r*_r + _r*_r))/2, height/2, sqrt((float)(_r*_r + _r*_r)), sqrt((float)(_r*_r + _r*_r)));
             lastPosMs = currentPosMs;
           }
         }
@@ -179,7 +202,7 @@ class SpiralwaveformGeneratorThread extends Thread {
 
         i++;
         theta -= aRad;
-        r -= spaceOfEachLine/(outputSamplingRate * (60/rpm));
+        r -= (amplitudeMax + spaceOfEachLine) / (outputSamplingRate * (60/rpm));
       }
     }
     while (samplesRead != 0);
@@ -214,8 +237,8 @@ void draw() {
     background(255);
     fill(0);
     
-    if (generatorThread.running)
-      generatorThread.quit();
+    //if (generatorThread.running)
+    //  generatorThread.quit();
 
     generatorThread.start(new File(dataPath(audioFilePath)));
     audioFilePath = null;
