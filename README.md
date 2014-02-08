@@ -57,9 +57,7 @@ int dpi = 200;
 What kind of sound made by laser cutter?
 ----------------------------------------
 Please watch this video.  
-<a href="http://vimeo.com/58682203" target="_blank">
-<img src="http://b.vimeocdn.com/ts/407/464/407464338_640.jpg" 
-alt="Laser Cut Record from jo kazuhiro"/></a>
+  <a href="http://vimeo.com/58682203" target="_blank"><img src="http://b.vimeocdn.com/ts/407/464/407464338_640.jpg" alt="Laser Cut Record from jo kazuhiro"/></a>
 
 More detail is here.  
  http://www.instructables.com/id/How-to-make-a-record-without-prior-acoustic-inform/  
