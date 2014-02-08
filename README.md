@@ -47,9 +47,8 @@ double svgPathStrokeWidth = 0.001; // 0.001pt
 // i.e. Universal VLS 2.30 with HPDFO lends is 1000dpi
 int dpi = 200; 
   ```
-
-  ![param_diagram1](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram1.png)
-  ![param_diagram2](https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram2.png)
+  <img alt="Cutting Record Params Diagram1" src="https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram1.png" width="640px"/>
+  <img alt="Cutting Record Params Diagram2" src="https://raw.github.com/mitsuhito/CuttingRecordGenerator/master/cuttingrecord_param_diagram2.png" width="640px"/>
   
 6. Cutting "Record" and play it!  
   If you have some digital fabrication tool such as laser cutter, paper cutting machine, you can try to make your own record. If you don't have it go to hacker space, fablab!  
@@ -58,7 +57,9 @@ int dpi = 200;
 What kind of sound made by laser cutter?
 ----------------------------------------
 Please watch this video.  
-<iframe src="http://player.vimeo.com/video/58682203" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/58682203">Laser Cut Record</a> from <a href="http://vimeo.com/user638795">jo kazuhiro</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<a href="http://vimeo.com/58682203" target="_blank">
+<img src="http://b.vimeocdn.com/ts/407/464/407464338_640.jpg" 
+alt="Laser Cut Record from jo kazuhiro"/></a>
 
 More detail is here.  
  http://www.instructables.com/id/How-to-make-a-record-without-prior-acoustic-inform/  
